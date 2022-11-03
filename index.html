@@ -1,0 +1,37 @@
+<!-- True Yuen, Period 7-8 Web Development (Even days)
+When you click on the button, it generates 3 numbers: the number of the first die roll, the number 
+of the second die roll, and both dice rolls. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        function initialize()
+        {
+            randNumOutput1 = document.getElementById("number1");
+            randNumOutput2 = document.getElementById("number2");
+            sumOutput = document.getElementById("sum");
+            generateRandomNumber();
+        }
+        function generateRandomNumber()
+        {
+            randNumber1 = parseInt(Math.random() * 6) + 1;
+            randNumber2 = parseInt(Math.random() * 6) + 1;
+            sum = randNumber1 + randNumber2;
+            randNumOutput1.innerHTML = randNumber1;
+            randNumOutput2.innerHTML = randNumber2;
+            sumOutput.innerHTML = sum;
+        }
+    </script>
+</head>
+<body onload="initialize();">
+    <p id="number1">0</p>
+    <p id="number2">0</p>
+    <p id="sum"></p>
+    <button onclick = "generateRandomNumber();">Roll 2 Dice</button>
+</body>
+</html>
